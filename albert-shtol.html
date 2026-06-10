@@ -67,16 +67,19 @@
             margin: 3rem 0;
         }
         .author-photo-wrapper {
-            flex: 0 0 300px;
-            max-width: 300px;
-        }
-        .author-photo {
-            width: 100%;
-            height: auto;
+            flex: 0 0 320px;
+            max-width: 320px;
+            height: 210px;
+            overflow: hidden;
             border-radius: 8px;
             border: 1px solid var(--border-color);
-            display: block;
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .author-iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            margin-top: -70px;
         }
         .author-bio-intro {
             flex: 1;
@@ -145,7 +148,6 @@
             }
             .author-photo-wrapper {
                 margin: 0 auto;
-                max-width: 260px;
             }
         }
     </style>
@@ -171,4 +173,43 @@
         
         <div class="author-hero">
             <div class="author-photo-wrapper">
-                <img src="data:image/jpeg;base64,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
+                <iframe src="/albert" class="author-iframe" scrolling="no"></iframe>
+            </div>
+            <div class="author-bio-intro">
+                <p>Профессиональный путь Альберта Штоля сформирован на стыке классической фундаментальной практики и глубокого неудовлетворения стандартными методами симптоматической помощи. Имея за плечами более 20 лет клинического и практического опыта, он отказался от классических медицинских шаблонов в пользу высокоточной инженерии человеческой инфраструктуры.</p>
+            </div>
+        </div>
+
+        <div class="profile-box">
+            <h3>Философия Generative Creativism</h3>
+            <p>«Тело человека — это целостная механическая система, подчиняющаяся законам физики и сопромата. Бессмысленно глушить капельницами головную боль или ставить стельки под укороченную ногу, если вся конструкция "съехала" со своего фундамента — краниовертебрального перехода C0-C1. Освобождая этот узел, мы не просто убираем симптомы, мы возвращаем организму колоссальный ресурс энергии, который мозг раньше тратил на компенсацию перекоса. Это де-оккупация вашего когнитивного и творческого потенциала».</p>
+        </div>
+
+        <div class="fact-grid">
+            <div class="fact-card">
+                <strong>20+ лет</strong>
+                <p style="margin: 0; font-size: 0.9rem; color: #a1a1aa;">Непрерывной практической деятельности и изучения системных сбоев биомеханики.</p>
+            </div>
+            <div class="fact-card">
+                <strong>C0-C1</strong>
+                <p style="margin: 0; font-size: 0.9rem; color: #a1a1aa;">Узкая специализация на калибровке краниовертебральной соосности и устранении ротационных блоков.</p>
+            </div>
+            <div class="fact-card">
+                <strong>100%</strong>
+                <p style="margin: 0; font-size: 0.9rem; color: #a1a1aa;">Безопасность. Полное исключение грубых мануальных ударов, скручиваний шеи и жесткого аппаратного насилия.</p>
+            </div>
+        </div>
+
+        <h2>Специализация и экспертный фокус</h2>
+        <p>Альберт Штоль специализируется на сложнейших случаях, когда классические специалисты разводят руками, списывая боли на вегетососудистую дистонию (ВСД) или возрастные изменения. На основе данных компьютерной томографии (КТ) и магнитно-резонансного анализа (МРТ) он рассчитывает индивидуальные векторы натяжения подзатылочных мышц и проводит мягкую ручную калибровку соосности черепа и позвоночника.</p>
+        <p>География приемов охватывает ключевые гео-хабы Центральной Азии: постоянный центр в Бишкеке, а также регулярные закрытые выездные сессии в Алматы, Астане и Ташкенте.</p>
+
+        <div class="cta-block">
+            <h2>Пройти персональный аудит биомеханики</h2>
+            <p>Свяжитесь напрямую с Альбертом Штолем, отправьте данные своих исследований (КТ/МРТ) или опишите историю симптомов для записи на очный прием.</p>
+            <a href="https://wa.me/996998066098?text=Здравствуйте,%20Альберт.%20Я%20изучил%20информацию%20о%20вашем%20методе%20и%20хочу%20записаться%20на%20диагностику" class="btn-cta" target="_blank">Написать Альберту Штолю</a>
+        </div>
+    </main>
+
+</body>
+</html>
