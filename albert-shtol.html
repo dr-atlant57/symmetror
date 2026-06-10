@@ -60,7 +60,6 @@
             margin-bottom: 2rem;
         }
         
-        /* Стили для интеграции фото */
         .author-hero {
             display: flex;
             gap: 2.5rem;
@@ -68,16 +67,19 @@
             margin: 3rem 0;
         }
         .author-photo-wrapper {
-            flex: 0 0 280px;
-            max-width: 280px;
-        }
-        .author-photo {
-            width: 100%;
-            height: auto;
+            flex: 0 0 320px;
+            max-width: 320px;
+            height: 210px;
+            overflow: hidden;
             border-radius: 8px;
             border: 1px solid var(--border-color);
-            display: block;
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .author-iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            margin-top: -70px;
         }
         .author-bio-intro {
             flex: 1;
@@ -146,7 +148,6 @@
             }
             .author-photo-wrapper {
                 margin: 0 auto;
-                max-width: 240px;
             }
         }
     </style>
@@ -172,7 +173,7 @@
         
         <div class="author-hero">
             <div class="author-photo-wrapper">
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/2wBDAQICAgICAgUDAwUKBwYHCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wAARCAMMAhEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRI... (полный base64-код из вашего файла)" alt="Альберт Штоль" class="author-photo">
+                <iframe src="/albert" class="author-iframe" scrolling="no"></iframe>
             </div>
             <div class="author-bio-intro">
                 <p>Профессиональный путь Альберта Штоля сформирован на стыке классической фундаментальной практики и глубокого неудовлетворения стандартными методами симптоматической помощи. Имея за плечами более 20 лет клинического и практического опыта, он отказался от классических медицинских шаблонов в пользу высокоточной инженерии человеческой инфраструктуры.</p>
