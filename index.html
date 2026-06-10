@@ -41,16 +41,37 @@
             color: #ffffff;
             text-decoration: none;
         }
-        nav a {
+        .nav-menu a {
             color: #a1a1aa;
             text-decoration: none;
             margin-left: 1.5rem;
             font-size: 0.95rem;
             transition: color 0.3s;
         }
-        nav a:hover {
+        .nav-menu a:hover {
             color: #ffffff;
         }
+
+        /* Кнопка гамбургера для мобильных (скрыта на ПК) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 110;
+        }
+        .menu-toggle span {
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
         .hero {
             max-width: 1000px;
             margin: 5rem auto;
@@ -132,28 +153,71 @@
             color: #71717a;
             font-size: 0.9rem;
         }
+
+        /* Адаптивные стили мобильного меню */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                border-bottom: 1px solid var(--border-color);
+                padding: 1.5rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-menu a {
+                margin: 1rem 2rem;
+                font-size: 1.1rem;
+                display: block;
+            }
+            
+            /* Превращение полосок в крестик */
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <a href="/" class="logo">PRIMORDIS</a>
-        <nav>
-    <a href="/albert-shtol">Альберт Штоль</a>
-    <a href="/about">О методе</a>
-    <a href="#symptoms">Симптомы</a>
-    <a href="/contacts-bishkek">Бишкек</a>
-    <a href="/almaty">Алматы</a>
-    <a href="/astana">Астана</a>
-    <a href="/tashkent">Ташкент</a>
-</nav>
+        <button class="menu-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
+            <a href="/albert-shtol">Альберт Штоль</a>
+            <a href="/about">О методе</a>
+            <a href="#symptoms">Симптомы</a>
+            <a href="/contacts-bishkek">Бишкек</a>
+            <a href="/almaty">Алматы</a>
+            <a href="/astana">Астана</a>
+            <a href="/tashkent">Ташкент</a>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
             <h1>Архитектура биомеханической симметрии и статуса</h1>
             <p>Человеческое тело — это точнейшая инженерная структура. Метод PRIMORDIS устраняет фундаментальный сбой в критическом узле — краниовертебральном переходе (C0-C1), освобождая ресурсы организма от разрушительного мышечного трения.</p>
-            <a href="https://wa.me/996701885577?text=Здравствуйте,%20хочу%20записаться%20на%20диагностику%20PRIMORDIS" class="btn-cta" target="_blank">Написать в WhatsApp</a>
+            <a href="https://wa.me/+996998066098?text=Здравствуйте,%20хочу%20записаться%20на%20диагностику%20PRIMORDIS" class="btn-cta" target="_blank">Написать в WhatsApp</a>
         </section>
 
         <section class="grid-section" id="symptoms">
@@ -200,6 +264,8 @@
                     <p>Ночная ишемия ретикулярной формации ствола мозга, не позволяющая нервной системе расслабиться.</p>
                 </a>
             </div>
+        </section>
+
         <section class="grid-section" id="diagnostika" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 4rem;">
             <h2>Инженерный анализ и расшифровка снимков</h2>
             <div class="symptoms-grid">
@@ -213,9 +279,11 @@
                 </a>
                 <a href="/diagnostika/sindrom-pozvonochnoy-arterii" class="symptom-card" style="border-left: 3px solid var(--accent-color);">
                     <h3>Синдром позвоночной артерии</h3>
-                    <p>Физика компрессии вертебробазилярного бассейна и ишемии стволовых структур мозга.</p>
+                    <p>Физика компрессии вертебробазилярного бассейна and ишемии стволовых структур мозга.</p>
                 </a>
             </div>
+        </section>
+
         <section class="grid-section" id="anatomia" style="margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 4rem;">
             <h2>Анатомический атлас и биомеханика</h2>
             <div class="symptoms-grid">
@@ -243,5 +311,22 @@
         <p>&copy; 2026 PRIMORDIS. Метод Альберта Штоля. Бишкек, Центральная Азия.</p>
     </footer>
 
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Автоматическое закрытие меню при клике на ссылки (особенно полезно для якоря #symptoms)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
