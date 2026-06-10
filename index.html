@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Центр краниовертебральной коррекции PRIMORDIS | Альберт Штоль</title>
-    <meta name="description" content="Авторский метод биомеханической оптимизации и краниовертебральной коррекции C0-C1 в Бишкеке. Устранение первопричины боли, восстановление симметрии тела и раскрытие человеческого потенциала.">
+    <title>Центр биомеханической симметрии PRIMORDIS | Альберт Штоль</title>
+    <meta name="description" content="Авторский метод краниовертебральной коррекции C0-C1 в Бишкеке. Настройка соосности черепа и позвоночника, устранение первопричины системных болей и де-оккупация ресурсов тела.">
     <style>
         :root {
-            --bg-color: #0a0a0c;
+            --bg-color: #0d0e11;
             --text-color: #e4e4e7;
-            --accent-color: #3b82f6;
-            --card-bg: #18181b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --card-bg: #18191e;
+            --border-color: #27272a;
         }
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -21,66 +23,165 @@
             padding: 0;
         }
         header {
-            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(13, 14, 17, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        nav a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffffff;
+        }
+        .hero {
+            max-width: 1000px;
+            margin: 5rem auto;
+            padding: 0 1.5rem;
             text-align: center;
-            border-bottom: 1px solid #27272a;
         }
         h1 {
             color: #ffffff;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
         }
-        .subtitle {
+        .hero p {
+            font-size: 1.25rem;
             color: #a1a1aa;
-            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
         }
-        main {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-        .manifesto {
-            background: var(--card-bg);
-            border-left: 4px solid var(--accent-color);
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 3rem;
-        }
-        .btn {
+        .btn-cta {
             display: inline-block;
             background: var(--accent-color);
             color: #ffffff;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 6px;
-            font-weight: bold;
-            transition: background 0.3s;
-            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
         }
-        .btn:hover {
-            background: #2563eb;
+        .btn-cta:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        .grid-section {
+            max-width: 1000px;
+            margin: 5rem auto;
+            padding: 0 1.5rem;
+        }
+        .grid-section h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .symptom-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: border-color 0.3s, transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .symptom-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-4px);
+        }
+        .symptom-card h3 {
+            color: #ffffff;
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .symptom-card p {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: #71717a;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>PRIMORDIS</h1>
-        <div class="subtitle">Архитектура биомеханической симметрии и статуса</div>
+        <a href="/" class="logo">PRIMORDIS</a>
+        <nav>
+            <a href="#about">О методе</a>
+            <a href="#symptoms">Симптомы</a>
+            <a href="https://wa.me/996700000000?text=Здравствуйте,%20хочу%20записаться%20на%20диагностику%20PRIMORDIS" target="_blank">Контакты</a>
+        </nav>
     </header>
 
     <main>
-        <section class="manifesto">
-            <h2>Освобождение потенциала через баланс C0-C1</h2>
-            <p>Человеческое тело — это высокоточная инженерная система. Когда нарушена соосность в фундаментальном узле — краниовертебральном переходе (череп относительно первого шейного позвонка Атланта) — вся структура начинает работать с избыточным трением, компенсируя наклон. Метод PRIMORDIS направлен на мягкое возвращение затылочной кости и C1 в симметрию, ликвидируя истинную причину системных сбоев.</p>
+        <section class="hero">
+            <h1>Архитектура биомеханической симметрии и статуса</h1>
+            <p>Человеческое тело — это точнейшая инженерная структура. Метод PRIMORDIS устраняет фундаментальный сбой в критическом узле — краниовертебральном переходе (C0-C1), освобождая ресурсы организма от разрушительного мышечного трения.</p>
+            <a href="https://wa.me/996700000000?text=Здравствуйте,%20хочу%20записаться%20на%20диагностику%20PRIMORDIS" class="btn-cta" target="_blank">Связаться с Архитектором</a>
         </section>
 
-        <section>
-            <h3>Автор метода: Альберт Штоль</h3>
-            <p>Специалист по краниовертебральной коррекции, де-оккупирующий ресурсы тела от структурного стресса для восстановления естественной эффективности и ясности мышления.</p>
-            <a href="#" class="btn">Пройти диагностику</a>
+        <section class="grid-section" id="symptoms">
+            <h2>Локализация системных сбоев биомеханики</h2>
+            <div class="symptoms-grid">
+                <a href="/simptomy/golovnaya-bol" class="symptom-card">
+                    <h3>Головная боль в затылке</h3>
+                    <p>Постоянное мышечное перенапряжение и сдавливание затылочных нервов из-за наклона черепа.</p>
+                </a>
+                <a href="/simptomy/migren" class="symptom-card">
+                    <h3>Мигрень с аурой</h3>
+                    <p>Острая сосудистая реакция, спровоцированная хроническим раздражением краниовертебральной зоны.</p>
+                </a>
+                <a href="/simptomy/shum-v-ushah" class="symptom-card">
+                    <h3>Шум в ушах и головокружение</h3>
+                    <p>Компрессия позвоночных артерий в тисках смещенного первого шейного позвонка Атланта.</p>
+                </a>
+                <a href="/simptomy/davlenie" class="symptom-card">
+                    <h3>Скачки давления</h3>
+                    <p>Искусственное повышение системного давления как защитный механизм мозга в условиях ишемии.</p>
+                </a>
+                <a href="/simptomy/onemenie-ruk" class="symptom-card">
+                    <h3>Онемение пальцев рук ночью</h3>
+                    <p>Нисходящий каскадный спазм лестничных мышц, блокирующий плечевое нервное сплетение.</p>
+                </a>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 PRIMORDIS. Метод Альберта Штоля. Бишкек, Центральная Азия.</p>
+    </footer>
 
 </body>
 </html>
