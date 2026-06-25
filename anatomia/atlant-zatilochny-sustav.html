@@ -7,9 +7,6 @@
 <meta name="description" content="Инженерный анализ атланто-затылочного сочленения C0-C1. Как наклон мыщелков черепа запускает каскад мышечных компенсаций и перекос всего скелета.">
 <link rel="canonical" href="https://symmetror.com/anatomia/atlant-zatilochny-sustav">
 <link rel="stylesheet" href="/style.css">
-<script type="importmap">
-{"imports":{"three":"/assets/vendor/three/three.module.js","three/addons/":"/assets/vendor/three/addons/"}}
-</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
@@ -124,7 +121,7 @@
 (async () => {
   const root = document.getElementById('model-root');
   try {
-    const { initC0C1Scene } = await import('/assets/c0c1-scene.js');
+    const { initC0C1Scene } = await import('/assets/c0c1-bundle.js');
     await initC0C1Scene('model-root', { mode: 'c0c1' });
   } catch (e) {
     if (root) root.innerHTML = '<div class="model-3d-fallback">Не удалось загрузить 3D-модель (проблема сети или файла). Описание сустава — в тексте выше.</div>';
