@@ -7,9 +7,6 @@
 <meta name="description" content="Почему блокируется атланто-аксиальный сустав? Инженерный разбор ротации первого шейного позвонка и ограничения подвижности шеи. Метод SYMMETROR.">
 <link rel="canonical" href="https://symmetror.com/anatomia/atlant-aksialny-sustav">
 <link rel="stylesheet" href="/style.css">
-<script type="importmap">
-{"imports":{"three":"/assets/vendor/three/three.module.js","three/addons/":"/assets/vendor/three/addons/"}}
-</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
@@ -124,7 +121,7 @@
 (async () => {
   const root = document.getElementById('model-root');
   try {
-    const { initC0C1Scene } = await import('/assets/c0c1-scene.js');
+    const { initC0C1Scene } = await import('/assets/c0c1-bundle.js');
     await initC0C1Scene('model-root', { mode: 'c1c2' });
   } catch (e) {
     if (root) root.innerHTML = '<div class="model-3d-fallback">Не удалось загрузить 3D-модель (проблема сети или файла). Описание сустава — в тексте выше.</div>';
