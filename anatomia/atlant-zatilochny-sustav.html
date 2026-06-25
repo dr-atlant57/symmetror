@@ -119,10 +119,17 @@
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Главная</a><span class="sep">/</span><a href="/">Анатомия</a><span class="sep">/</span><span>Атланто-затылочный сустав</span></nav><h1>Атланто-затылочный сустав (C0-C1) — первый замок и фундамент черепа</h1><div class="quick-answer"><strong>Коротко:</strong> Атланто-затылочный сустав (C0-C1) — высший суставной уровень тела, отвечающий за кивательные движения и боковые наклоны. Латеропозиция — боковой сдвиг черепа относительно мыщелков Атланта — может запускать каскад компенсаций по всему телу.</div>
 
 <p>Атланто-затылочное сочленение (C0-C1) — высший суставной уровень человеческого тела: здесь нижняя площадка затылочной кости стыкуется с суставными ямками позвоночника. Этот узел отвечает за кивательные движения и боковые наклоны головы.</p>
-<div id="model-root" class="model-3d-wrapper"></div>
+<div id="model-root" class="model-3d-wrapper"><span>Загрузка интерактивной 3D-модели…</span></div>
 <script type="module">
-import { initC0C1Scene } from '/assets/c0c1-scene.js';
-initC0C1Scene('model-root', { mode: 'c0c1' });
+(async () => {
+  const root = document.getElementById('model-root');
+  try {
+    const { initC0C1Scene } = await import('/assets/c0c1-scene.js');
+    await initC0C1Scene('model-root', { mode: 'c0c1' });
+  } catch (e) {
+    if (root) root.innerHTML = '<div class="model-3d-fallback">Не удалось загрузить 3D-модель (проблема сети или файла). Описание сустава — в тексте выше.</div>';
+  }
+})();
 </script>
 <p class="model-3d-caption">Череп опирается на Атлант двумя мыщелками. Переключите «Смещение», чтобы увидеть латеропозицию — боковой наклон черепа относительно опорной площадки.</p>
 <p class="model-3d-hint">Модель загружается, когда блок появляется на экране — не влияет на скорость загрузки страницы.</p>
