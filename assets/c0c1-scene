@@ -20,15 +20,17 @@ export async function initC0C1Scene(containerId, opts = {}) {
         return;
     }
 
-    const canvasHost = document.createElement('div');
-    canvasHost.style.width = '100%';
-    canvasHost.style.height = '320px';
-    root.prepend(canvasHost);
-
     const io = new IntersectionObserver(async (entries) => {
         for (const entry of entries) {
             if (entry.isIntersecting) {
                 io.disconnect();
+                root.innerHTML = ''; // clear the "Загрузка..." placeholder
+                root.style.display = 'block'; // undo the centering flex used for the placeholder text
+                root.style.padding = '0';
+                const canvasHost = document.createElement('div');
+                canvasHost.style.width = '100%';
+                canvasHost.style.height = '320px';
+                root.appendChild(canvasHost);
                 await buildScene(canvasHost, mode, root);
             }
         }
