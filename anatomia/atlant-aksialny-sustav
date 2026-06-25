@@ -119,10 +119,17 @@
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Главная</a><span class="sep">/</span><a href="/">Анатомия</a><span class="sep">/</span><span>Атланто-аксиальный сустав</span></nav><h1>Атланто-аксиальный сустав — поворотный механизм верхнешейного отдела</h1><div class="quick-answer"><strong>Коротко:</strong> Около половины поворота головы влево-вправо происходит в одном суставе — атланто-аксиальном (C1-C2). Малейший ротационный подвывих кольца Атланта относительно зубовидного отростка C2 может блокировать свободу этого вращения.</div>
 
 <p>Когда человек поворачивает голову влево или вправо, значительная часть этого вращения происходит не за счёт всего шейного отдела, а в одном специализированном сочленении — срединном атланто-аксиальном суставе.</p>
-<div id="model-root" class="model-3d-wrapper"></div>
+<div id="model-root" class="model-3d-wrapper"><span>Загрузка интерактивной 3D-модели…</span></div>
 <script type="module">
-import { initC0C1Scene } from '/assets/c0c1-scene.js';
-initC0C1Scene('model-root', { mode: 'c1c2' });
+(async () => {
+  const root = document.getElementById('model-root');
+  try {
+    const { initC0C1Scene } = await import('/assets/c0c1-scene.js');
+    await initC0C1Scene('model-root', { mode: 'c1c2' });
+  } catch (e) {
+    if (root) root.innerHTML = '<div class="model-3d-fallback">Не удалось загрузить 3D-модель (проблема сети или файла). Описание сустава — в тексте выше.</div>';
+  }
+})();
 </script>
 <p class="model-3d-caption">Атлант (C1) вращается вокруг зубовидного отростка Аксиса (C2), как колесо на оси. Переключите «Смещение», чтобы увидеть ротационный подвывих кольца относительно зуба C2.</p>
 <p class="model-3d-hint">Модель загружается, когда блок появляется на экране — не влияет на скорость загрузки страницы.</p>
