@@ -119,10 +119,17 @@
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Главная</a><span class="sep">/</span><a href="/">Анатомия</a><span class="sep">/</span><span>Краниовертебральный переход</span></nav><h1>Биомеханика краниовертебрального перехода — главный узел распределения нагрузок</h1><div class="quick-answer"><strong>Коротко:</strong> Краниовертебральный переход (КВП) объединяет затылочную кость (C0), Атлант (C1) и Аксис (C2) и удерживается не дисками, а тончайшим балансом связок и подзатылочных мышц. При ротационном смещении Атланта нагрузка на удерживающие мышцы может возрастать в несколько раз.</div>
 
 <p>Краниовертебральный переход (КВП) — анатомический комплекс, объединяющий затылочную кость черепа (C0), первый шейный позвонок (C1 / Атлант) и второй шейный позвонок (C2 / Аксис). Этот узел не имеет межпозвоночных дисков и удерживается за счёт баланса связок и глубоких подзатылочных мышц.</p>
-<div id="model-root" class="model-3d-wrapper"></div>
+<div id="model-root" class="model-3d-wrapper"><span>Загрузка интерактивной 3D-модели…</span></div>
 <script type="module">
-import { initC0C1Scene } from '/assets/c0c1-scene.js';
-initC0C1Scene('model-root', { mode: 'overview' });
+(async () => {
+  const root = document.getElementById('model-root');
+  try {
+    const { initC0C1Scene } = await import('/assets/c0c1-scene.js');
+    await initC0C1Scene('model-root', { mode: 'overview' });
+  } catch (e) {
+    if (root) root.innerHTML = '<div class="model-3d-fallback">Не удалось загрузить 3D-модель (проблема сети или файла). Описание сустава — в тексте выше.</div>';
+  }
+})();
 </script>
 <p class="model-3d-caption">Интерактивная модель: затылочная кость (C0), Атлант (C1) и Аксис (C2). Потяните, чтобы повернуть, и переключите «Норма / Смещение», чтобы увидеть наклон черепа при ротационном сдвиге.</p>
 <p class="model-3d-hint">Модель загружается, когда блок появляется на экране — не влияет на скорость загрузки страницы.</p>
