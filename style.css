@@ -405,3 +405,11 @@ main.wide{padding-inline:22px}
 header{padding:16px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Contextual discovery paths on established SEO articles */
+.crosspromo26{display:flex;flex-wrap:wrap;align-items:center;gap:9px 16px;margin:20px 0 28px;
+padding:13px 18px;border-radius:15px;border:1px solid #344d48;background:#112220}
+.crosspromo26 span{color:#a2c2b7;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.crosspromo26 a{color:#d4f6ae;font-size:.82rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.crosspromo26 a:hover{text-decoration:underline}
+@media(max-width:660px){.crosspromo26{gap:9px 12px}.crosspromo26 span{flex-basis:100%}}
