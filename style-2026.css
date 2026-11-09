@@ -589,3 +589,16 @@ padding:13px 18px;border-radius:15px;border:1px solid #344d48;background:#112220
  .new26 .zone-picker26{grid-template-columns:1fr 1fr}
  .new26 .zone-picker26 button{padding:9px;font-size:.8rem}
 }
+
+/* Guide pages override the broad .new26 main selector. */
+.new26 main.guide-article26{max-width:1000px;width:100%;margin:0 auto;padding:clamp(35px,5vw,75px) clamp(20px,4vw,44px) 105px}
+.new26 main.guide-article26 h1{font-size:clamp(2.7rem,6vw,5.8rem);line-height:1.04}
+.new26 main.guide-article26 h2{margin:45px 0 18px;font-size:clamp(1.7rem,3vw,2.7rem)}
+.new26 main.guide-article26 .breadcrumbs{margin:0 0 45px;padding:0}
+.new26 main.guide-article26 .concept-intro26 h2{margin:10px 0 15px}
+.new26 main.guide-article26 .tile26{min-height:270px}
+.new26 main.guide-article26 .grid26{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.new26 main.guide-article26 .guide-card26 h3{margin:10px 0}
+.new26 .zone-section26 .zone-art26{position:relative}
+body:not(.new26) .video-slot26 strong,body:not(.new26) .concept-intro26 h2{color:#edf8ef}
+body:not(.new26) .travel-passage26 h2{color:#f0f9ed}
