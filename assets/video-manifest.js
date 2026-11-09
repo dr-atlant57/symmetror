@@ -2,6 +2,7 @@
 Supported: YouTube, Vimeo and MP4 (HTTPS). No fabricated demos or autoplay. */
 window.SYMMETROR_VIDEOS = Object.freeze({
   "home": "",
+  "author": "",
   "about": "",
   "program": "",
   "academy": "",
