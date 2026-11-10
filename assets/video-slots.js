@@ -18,6 +18,6 @@
     v.title="Видео SYMMETROR";v.loading="lazy";v.className="video-live26";host.replaceChildren(v);host.classList.add("has-video26");
   }
   document.querySelectorAll("[data-video-key]").forEach(host=>{
-    const u=manifest[host.dataset.videoKey];if(u)render(u,host);
+    const u=manifest[host.dataset.videoKey];if(u)render(u,host);else host.hidden=true;
   });
 })();
