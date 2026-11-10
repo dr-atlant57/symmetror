@@ -49,6 +49,26 @@ function initAnatomy(){
  modal.setAttribute("aria-label","Анатомическое пояснение C0, C1, C2");
  modal.innerHTML='<div class="anatomy-dialog-body26"><div class="anatomy-dialog-head26"><span>SYMMETROR / АНАТОМИЯ</span><button type="button" aria-label="Закрыть" class="anatomy-close26">×</button></div><h2>Что такое <em>C0, C1 и C2?</em></h2><div class="anatomy-content26"><div class="anatomy-visual26">'+drawing+'</div><div class="anatomy-legend26"><p><strong>C0 — череп.</strong><br>Верхняя часть схемы, включая затылочную кость.</p><p><strong>C1 — атлант.</strong><br>Первый шейный позвонок непосредственно под черепом.</p><p><strong>C2 — аксис.</strong><br>Второй шейный позвонок; ниже расположены C3, C4 и C5.</p><p class="anatomy-highlight26">Светящимся контуром выделена область <strong>C0–C1</strong>: положение головы относительно атланта — центральный ориентир авторской системы SYMMETROR.</p><a href="/anatomia/kraniovertebralny-perehod">Открыть подробную анатомию →</a></div></div><p class="anatomy-caption26">Упрощённая графическая схема; не диагностическое изображение и не масштабная анатомическая модель.</p></div>';
  document.body.append(modal);
+ const language=(document.documentElement.lang||"ru").toLowerCase().slice(0,2);
+ if(language==="en"||language==="de"){
+  const en=language==="en";
+  modal.setAttribute("aria-label",en?"Anatomy explainer for C0–C5":"Anatomische Erklärung C0–C5");
+  modal.querySelector(".anatomy-dialog-head26 span").textContent=en?"SYMMETROR / VISUAL ANATOMY":"SYMMETROR / ANATOMIE VERSTEHEN";
+  modal.querySelector(".anatomy-close26").setAttribute("aria-label",en?"Close":"Schließen");
+  modal.querySelector("h2").innerHTML=en?"What are <em>C0, C1 and C2?</em>":"Was bedeuten <em>C0, C1 und C2?</em>";
+  const ps=modal.querySelectorAll(".anatomy-legend26 p");
+  ps[0].innerHTML=en?"<strong>C0 — skull.</strong><br>The occipital bone at the base of your head.":"<strong>C0 — Schädel.</strong><br>Das Hinterhauptbein an der Schädelbasis.";
+  ps[1].innerHTML=en?"<strong>C1 — atlas.</strong><br>The first cervical vertebra directly under the skull.":"<strong>C1 — Atlas.</strong><br>Der erste Halswirbel direkt unter dem Schädel.";
+  ps[2].innerHTML=en?"<strong>C2 — axis.</strong><br>The second cervical vertebra, followed by C3, C4 and C5.":"<strong>C2 — Axis.</strong><br>Der zweite Halswirbel; darunter folgen C3, C4 und C5.";
+  ps[3].innerHTML=en?"The highlighted ring marks <strong>C0–C1</strong>: the head relative to the atlas, a core reference in Albert Stoll's SYMMETROR model.":"Der markierte Bereich zeigt <strong>C0–C1</strong>: die Lage des Kopfes gegenüber dem Atlas — ein zentraler Orientierungspunkt der SYMMETROR-Methode.";
+  modal.querySelector(".anatomy-legend26 a").textContent=en?"Read the detailed anatomy (Russian) →":"Anatomie im Detail (Russisch) →";
+  modal.querySelector(".anatomy-caption26").textContent=en?"Simplified illustration for orientation, not a diagnostic image.":"Vereinfachte Orientierungsskizze, keine diagnostische Abbildung.";
+  modal.querySelectorAll(".anatomy-illustration26 text").forEach(t=>{
+   if(t.textContent==="череп")t.textContent=en?"skull":"Schädel";
+   if(t.textContent==="атлант")t.textContent="Atlas";
+   if(t.textContent.startsWith("Обведено соединение"))t.textContent=en?"Highlighted: C0–C1 joint between head and atlas":"Markiert: C0–C1, Kopf und Atlas";
+  });
+ }
  const close=()=>modal.close?modal.close():modal.removeAttribute("open");
  const open=()=>modal.showModal?modal.showModal():modal.setAttribute("open","");
  modal.querySelector(".anatomy-close26").addEventListener("click",close);
