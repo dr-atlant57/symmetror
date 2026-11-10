@@ -640,3 +640,69 @@ body:not(.new26) .travel-passage26 h2{color:#f0f9ed}
 .new26 .self-recognition26 h2{margin:15px 0 20px}
 @media(max-width:820px){.self-recognition26 .self-steps26,.self-recognition26--compact .self-steps26{grid-template-columns:1fr}.self-recognition26 .self-step26{padding:14px}.new26 .self-recognition-section26{padding:26px 0 65px}}
 @media(max-width:480px){.self-recognition26{border-radius:20px}.self-recognition26 .self-actions26 a{width:100%}.self-recognition26 .self-kicker26{font-size:.65rem}}
+
+
+/* Interactive reference 2026: self-exploration on secondary pages, C0/C1 glossary */
+.self-disclosure26{margin:28px auto 34px;max-width:1220px;border:1px solid #577a65;border-radius:20px;background:#10201e;overflow:hidden;box-shadow:0 8px 24px #0003}
+.self-disclosure26>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:17px;padding:18px 22px;color:#f4f7ec}
+.self-disclosure26>summary::-webkit-details-marker{display:none}
+.self-disclosure26>summary strong{display:block;font-size:1.05rem;font-weight:750;letter-spacing:-.02em}
+.self-disclosure26>summary small{display:block;color:#b7c9bd;font-size:.8rem;margin-top:3px}
+.self-disclosure26 .self-icon26{font-size:1.65rem;color:#c7f47c}
+.self-disclosure26 .self-toggle26{margin-left:auto;color:#c7f47c;font-size:1.8rem;line-height:1}
+.self-disclosure26[open] .self-toggle26{transform:rotate(45deg)}
+.self-disclosure26>summary:hover,.self-disclosure26>summary:focus-visible{background:#1a3530}
+.self-disclosure26>.self-recognition26{margin:0;border:0;border-top:1px solid #4a705e;border-radius:0}
+.anatomy-term26{display:inline;border:0;border-bottom:1.5px dotted currentColor;border-radius:0;margin:0 1px;padding:0 1px;background:transparent;color:inherit;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;white-space:normal;line-height:inherit}
+.anatomy-term26:after{content:" ⓘ";font-family:Arial,sans-serif;font-size:.64em;color:#90b5a8;vertical-align:super}
+.anatomy-term26:hover,.anatomy-term26:focus-visible{color:#c7f47c;border-bottom-color:#c7f47c;outline-offset:3px}
+.anatomy-dialog26{box-sizing:border-box;width:min(880px,calc(100vw - 24px));max-width:none;max-height:min(92vh,920px);overflow:auto;border:1px solid #7ba58f;border-radius:26px;padding:0;background:#0e1b20;color:#f3f8f1;box-shadow:0 30px 110px #000c}
+.anatomy-dialog26::backdrop{background:rgba(3,9,12,.83);backdrop-filter:blur(6px)}
+.anatomy-dialog-body26{padding:clamp(18px,3vw,35px)}
+.anatomy-dialog-head26{display:flex;justify-content:space-between;align-items:center;color:#b4dfad;font-size:.7rem;font-weight:800;letter-spacing:.16em}
+.anatomy-close26{border:1px solid #45655b;border-radius:100px;background:#152d2d;color:#fff;font-size:1.5rem;line-height:1;width:39px;height:39px;cursor:pointer}
+.anatomy-dialog26 h2{margin:14px 0 26px;font-size:clamp(1.75rem,3vw,3rem);color:#fff;letter-spacing:-.04em}
+.anatomy-dialog26 h2 em{font-style:normal;color:#c7f47c}
+.anatomy-content26{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:25px}
+.anatomy-visual26 svg{width:100%;height:auto;display:block;border-radius:20px}
+.anatomy-legend26 p{color:#c9d9d3;line-height:1.65;font-size:.95rem;margin:0 0 17px}
+.anatomy-legend26 strong{color:#fff}
+.anatomy-legend26 .anatomy-highlight26{padding:17px;border:1px solid #7c9f5c;background:#c7f47c14;border-radius:14px}
+.anatomy-legend26 a{display:inline-block;color:#c7f47c;font-weight:800;text-decoration:underline}
+.anatomy-caption26{font-size:.75rem!important;color:#a8c0b7!important;margin:14px 0 0}
+@media(max-width:660px){.anatomy-content26{grid-template-columns:1fr}.anatomy-dialog26{max-height:96vh}.self-disclosure26>summary{padding:15px;gap:10px}.self-disclosure26>summary strong{font-size:.91rem}.self-disclosure26>summary small{font-size:.73rem}}
+
+
+/* Search-intent pages and mobile sessions 2026 */
+.new26 .editorial26{max-width:1100px;margin:0 auto;padding:45px clamp(20px,4.5vw,65px) 95px}
+.new26 .editorial26 .eyebrow26{margin:0 0 22px}
+.new26 .editorial26 h1{font-size:clamp(2.6rem,5.7vw,5.6rem);line-height:1.02;margin:8px 0 22px;max-width:1040px}
+.new26 .editorial26 .intro26{font-size:clamp(1.04rem,1.6vw,1.24rem);color:#e0eee3;max-width:850px;margin:0 0 35px}
+.new26 .editorial26 h2{font-size:clamp(1.65rem,3vw,2.65rem);margin:40px 0 15px}
+.new26 .editorial26 h3{font-size:clamp(1.13rem,2vw,1.55rem);margin:21px 0 12px}
+.new26 .editorial26 p,.new26 .editorial26 li{color:#cad8d0;line-height:1.8}
+.new26 .editorial26 a{color:#c7f47c}
+.new26 .editorial26 .editorial-card26{border:1px solid #46645a;border-radius:23px;padding:clamp(20px,3vw,34px);background:linear-gradient(135deg,#152828,#101921);margin:26px 0}
+.new26 .editorial26 .editorial-card26 h2:first-child{margin-top:0}
+.new26 .editorial26 .steps26{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:25px 0}
+.new26 .editorial26 .steps26>div{background:#111f23;border:1px solid #354d45;border-radius:18px;padding:21px}
+.new26 .editorial26 .steps26 strong{color:#d5f5b5}
+.new26 .editorial26 .steps26 p{font-size:.88rem}
+.new26 .editorial26 .local26{background:#c7f47c;color:#111f15;border-radius:23px;padding:clamp(22px,3vw,38px);margin:35px 0}
+.new26 .editorial26 .local26 h2,.new26 .editorial26 .local26 p{color:#112016}
+.new26 .editorial26 .local26 a{background:#112016;color:#ecf7df;border-radius:50px;padding:12px 20px;text-decoration:none;font-weight:800;display:inline-block}
+.new26 .editorial26 .local26 a:hover{background:#29402f}
+.new26 .editorial26 .smallprint26{font-size:.8rem;color:#b8c7bc}
+.new26 .editorial26 .ref-list26{font-size:.84rem;border-top:1px solid #36524b;padding-top:15px}
+.new26 .editorial26 .ref-list26 a{margin-right:16px;display:inline-block}
+.new26 .editorial26 .pills26{display:flex;flex-wrap:wrap;gap:11px;margin:23px 0}
+.new26 .editorial26 .pills26 a{border:1px solid #47665b;border-radius:28px;padding:9px 16px;text-decoration:none}
+.new26 .editorial26 .pills26 a:hover{background:#1b352b}
+.new26 .editorial26 table{border-collapse:collapse;width:100%;font-size:.9rem;margin:20px 0}
+.new26 .editorial26 th,.new26 .editorial26 td{text-align:left;border-bottom:1px solid #406259;padding:13px 10px;vertical-align:top;color:#dce8db}
+.new26 .editorial26 th{color:#c7f47c}
+@media(max-width:700px){.new26 .editorial26 .steps26{grid-template-columns:1fr}.new26 .editorial26 table{font-size:.83rem}}
+
+/* Secondary pages keep the signature self-check readily available without interrupting reading. */
+.new26:not(.home26) .self-recognition-section26{padding:10px 0 22px}
+.new26:not(.home26) .self-recognition-section26 .self-disclosure26{margin:12px auto 14px}
