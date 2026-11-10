@@ -702,3 +702,7 @@ body:not(.new26) .travel-passage26 h2{color:#f0f9ed}
 .new26 .editorial26 th,.new26 .editorial26 td{text-align:left;border-bottom:1px solid #406259;padding:13px 10px;vertical-align:top;color:#dce8db}
 .new26 .editorial26 th{color:#c7f47c}
 @media(max-width:700px){.new26 .editorial26 .steps26{grid-template-columns:1fr}.new26 .editorial26 table{font-size:.83rem}}
+
+/* Secondary pages keep the signature self-check readily available without interrupting reading. */
+.new26:not(.home26) .self-recognition-section26{padding:10px 0 22px}
+.new26:not(.home26) .self-recognition-section26 .self-disclosure26{margin:12px auto 14px}
